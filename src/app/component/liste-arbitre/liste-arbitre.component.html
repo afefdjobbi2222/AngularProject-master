@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+   
+        <button type="button"     class="btn btn-success"routerLink="/app-addarbitre">Ajouter Arbitre</button>
+    
+    
+    
+    <div class="panel-heading">
+    <h2>Arbitres List</h2> 
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead> <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Niveau</th>
+                <th>Actions</th> 
+             </tr>
+            </thead>
+            <tbody> <tr *ngFor="let arbitre of arbitres | async">
+                <td>{{arbitre.nom}}</td>
+                <td>{{arbitre.prenom}}</td>
+                <td>{{arbitre.niveau}}</td>
+                <td>
+                    <button (click)="deleteArbitre(arbitre.id)" class="btn btn-danger">Delete</button>
+                   <!-- <button (click)="updateArbitre(arbitre.id)" class="btn btn-info" style="margin-left: 10px">Update</button> -->
+                    <button (click)="arbitreDetails(arbitre.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                </td>
+            </tr> 
+            </tbody>
+        </table> 
+</div> 
+</div>
